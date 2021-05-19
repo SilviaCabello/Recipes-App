@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
+import Recipe from "./Recipe";
 
 function App() {
   const APP_ID = "d6c939d9";
@@ -17,6 +18,7 @@ function App() {
     );
     const data = await response.json();
     setRecipes(data.hits);
+    console.log(data.hits);
   };
 
   return (
@@ -28,6 +30,9 @@ function App() {
           Search
         </button>
       </form>
+      {recipes.map((recipe) => (
+        <Recipe key={recipe.recipe.label} title={recipe.recipe.label} calories={recipe.recipe.calories} image={recipe.recipe.image} />
+      ))}
     </div>
   );
 }
