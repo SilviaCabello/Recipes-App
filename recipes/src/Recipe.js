@@ -1,9 +1,9 @@
-const Recipe = () => {
+const Recipe = ({ title, image, calories }) => {
   return (
     <div>
-      <h3>Title</h3>
-      <p>Calories</p>
-      <img src="" alt="" />
+      <h3>{title}</h3>
+      <p>Calories: {calories}</p>
+      <img src={image} alt="" />
     </div>
   );
 };
