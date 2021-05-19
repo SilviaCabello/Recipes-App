@@ -1,18 +1,30 @@
-import React from "react";
-import './App.css';
+import React, { useEffect, useState } from "react";
+import "./App.css";
 
 function App() {
   const APP_ID = "d6c939d9";
   const APP_KEY = "b52ecc7bf4d89f472291cd4518360a3a";
 
-  const exampleReq = `https://api.edamam.com/search?q=chicken&app_id=${APP_ID}&app_key=${APP_KEY}`;
+  const [recipes, setRecipes] = useState([]);
+
+  const getData = () => {
+    fetch(
+      `https://api.edamam.com/search?q=chicken&app_id=${APP_ID}&app_key=${APP_KEY}`
+    )
+      .then((response) => response.json())
+      .then((data) => setRecipes(data));
+  };
+
+  useEffect(getData, []);
 
   return (
     <div className="App">
       <h3>What do you wanna eat today?</h3>
       <form className="search-form">
-        <input className="search-bar" type="text"/>
-        <button className="search-button" type="submit">Search</button>
+        <input className="search-bar" type="text" />
+        <button className="search-button" type="submit">
+          Search
+        </button>
       </form>
     </div>
   );
