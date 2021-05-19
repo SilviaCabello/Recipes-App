@@ -8,11 +8,11 @@ function App() {
 
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState("");
-  const [query, setQuery] = useState("chicken");
+  const [query, setQuery] = useState("fruit");
 
   useEffect(() => {
     getRecipes();
-  }, []);
+  }, [query]);
 
   const getRecipes = async () => {
     const response = await fetch(
@@ -26,35 +26,38 @@ function App() {
   const getSearch = (e) => {
     e.preventDefault();
     setQuery(search);
+    setSearch("");
   };
 
   const updateSearch = (e) => {
     setSearch(e.target.value);
-    console.log(search);
   };
 
   return (
     <div className="App">
-      <h3>What do you wanna eat today?</h3>
+      <h3 className="question-title">What do you wanna eat today?</h3>
       <form onSubmit={getSearch} className="search-form">
         <input
           className="search-bar"
           type="text"
           value={search}
           onChange={updateSearch}
+          placeholder="What's on your fridge?"
         />
         <button className="search-button" type="submit">
-          Search
+          Search Recipes
         </button>
       </form>
-      {recipes.map((recipe) => (
-        <Recipe
-          key={recipe.recipe.label}
-          title={recipe.recipe.label}
-          calories={recipe.recipe.calories}
-          image={recipe.recipe.image}
-        />
-      ))}
+      <div className="recipes-container">
+        {recipes.map((recipe) => (
+          <Recipe
+            key={recipe.recipe.label}
+            title={recipe.recipe.label}
+            calories={recipe.recipe.calories}
+            image={recipe.recipe.image}
+          />
+        ))}
+      </div>
     </div>
   );
 }
