@@ -35,7 +35,7 @@ function App() {
 
   return (
     <div className="App">
-      <h3 className="question-title">What do you wanna eat today?</h3>
+      <h1 className="question-title">WHAT DO YOU WANNA EAT TODAY?</h1>
       <form onSubmit={getSearch} className="search-form">
         <input
           className="search-bar"

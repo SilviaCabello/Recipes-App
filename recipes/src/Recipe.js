@@ -5,7 +5,7 @@ const Recipe = ({ title, image, calories }) => {
     <div className={style.recipe}>
       <h3>{title}</h3>
       <p>Calories: {calories}</p>
-      <img src={image} alt="" />
+      <img className={style.image} src={image} alt="" />
     </div>
   );
 };
