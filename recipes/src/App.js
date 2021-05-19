@@ -9,9 +9,10 @@ function App() {
 
   return (
     <div className="App">
-      <form>
-        <input type="text"/>
-        <button type="submit">Search</button>
+      <h3>What do you wanna eat today?</h3>
+      <form className="search-form">
+        <input className="search-bar" type="text"/>
+        <button className="search-button" type="submit">Search</button>
       </form>
     </div>
   );
