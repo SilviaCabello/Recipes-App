@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import Recipe from "./Recipe";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 function App() {
   const APP_ID = "d6c939d9";
@@ -35,29 +36,35 @@ function App() {
 
   return (
     <div className="App">
-      <h1 className="question-title">WHAT DO YOU WANNA EAT TODAY?</h1>
-      <form onSubmit={getSearch} className="search-form">
-        <input
-          className="search-bar"
-          type="text"
-          value={search}
-          onChange={updateSearch}
-          placeholder="What's on your fridge?"
-        />
-        <button className="search-button" type="submit">
-          Search Recipes
-        </button>
-      </form>
-      <div className="recipes-container">
-        {recipes.map((recipe) => (
-          <Recipe
-            key={recipe.recipe.label}
-            title={recipe.recipe.label}
-            calories={recipe.recipe.calories}
-            image={recipe.recipe.image}
-          />
-        ))}
-      </div>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/">
+            <h1 className="question-title">WHAT DO YOU WANNA EAT TODAY?</h1>
+            <form onSubmit={getSearch} className="search-form">
+              <input
+                className="search-bar"
+                type="text"
+                value={search}
+                onChange={updateSearch}
+                placeholder="What's on your fridge?"
+              />
+              <button className="search-button" type="submit">
+                Search Recipes
+              </button>
+            </form>
+            <div className="recipes-container">
+              {recipes.map((recipe) => (
+                <Recipe
+                  key={recipe.recipe.label}
+                  title={recipe.recipe.label}
+                  calories={recipe.recipe.calories}
+                  image={recipe.recipe.image}
+                />
+              ))}
+            </div>
+          </Route>
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
