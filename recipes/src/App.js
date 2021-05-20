@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import Recipe from "./Recipe";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
+import RecipeDetails from "./RecipeDetails";
 
 function App() {
   const APP_ID = "d6c939d9";
@@ -29,10 +30,16 @@ function App() {
     setQuery(search);
     setSearch("");
   };
-
+  const extractIdFromImgUrl = (url) => {
+    if(url){
+    let imgName = url.split('/').pop();
+    return imgName.split('.')[0];
+  }
+  };
   const updateSearch = (e) => {
     setSearch(e.target.value);
   };
+  
 
   return (
     <div className="App">
@@ -54,15 +61,24 @@ function App() {
             </form>
             <div className="recipes-container">
               {recipes.map((recipe) => (
-                <Recipe
-                  key={recipe.recipe.label}
-                  title={recipe.recipe.label}
-                  calories={recipe.recipe.calories}
-                  image={recipe.recipe.image}
-                />
+                <Link to={`/recipes/${extractIdFromImgUrl(recipe.recipe.image)}`}>
+                  <Recipe
+                    key={recipe.recipe.index}
+                    title={recipe.recipe.label}
+                    calories={recipe.recipe.calories}
+                    image={recipe.recipe.image}
+                    ingredients={recipe.recipe.ingredients}
+                  />
+                </Link>
               ))}
             </div>
           </Route>
+          <Route
+            path="/recipes/:label"
+            render={(routeProps) => (
+              <RecipeDetails routeProps={routeProps} recipes={recipes} />
+            )}
+          />
         </Switch>
       </BrowserRouter>
     </div>
