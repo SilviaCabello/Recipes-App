@@ -61,7 +61,7 @@ function App() {
             </form>
             <div className="recipes-container">
               {recipes.map((recipe) => (
-                <Link to={`/recipes/${extractIdFromImgUrl(recipe.recipe.image)}`}>
+                <Link className="Link-details" to={`/recipes/${extractIdFromImgUrl(recipe.recipe.image)}`}>
                   <Recipe
                     key={recipe.recipe.index}
                     title={recipe.recipe.label}

@@ -1,11 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+
 .App {
   min-height: 100vh;
-  background-image: linear-gradient(to top, #eedf5b 0%, #eedf5b 100%);
+  background-image: linear-gradient(to top, #ffe817 0%, #ffe817 100%);
 }
 
 .question-title {
   margin-top: 50px;
   text-align: center;
+  font-family: 'Oswald', sans-serif;
+  /* text-shadow: -2px 0px rgb(255, 11, 239); */
 }
 
 .search-form {
@@ -35,4 +39,9 @@
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+}
+
+.Link-details {
+  text-decoration: none;
+  color:black;
 }

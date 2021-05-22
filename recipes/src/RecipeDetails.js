@@ -16,11 +16,11 @@ const RecipeDetails = (recipes, routeProps) => {
         <h3>{foundMatch.recipe.label}</h3>
         <img src={foundMatch.recipe.image} />
         <p>Calories: {foundMatch.recipe.calories}</p>
-        <ol>
+        <ul>
           {foundMatch.recipe.ingredients.map((ingredient) => (
             <li>{ingredient.text}</li>
           ))}
-        </ol>
+        </ul>
       </div>
     );
   } else {
