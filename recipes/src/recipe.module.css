@@ -8,7 +8,8 @@
   justify-content: space-around;
   background-color: white;
   align-items: center;
-  min-width: 40%;
+  width: 300px;
+  height: 300px;
 }
 
 .image {
