@@ -57,3 +57,11 @@ h3 {
   text-align: center;
   
 }
+
+.recipe_details_container {
+  text-align: center;
+}
+
+li {
+  list-style: none;
+}

@@ -12,12 +12,12 @@ const RecipeDetails = (recipes, routeProps) => {
   );
   if (foundMatch) {
     return (
-      <div>
+      <div className="recipe_details_container">
         <h3>{foundMatch.recipe.label}</h3>
         <img src={foundMatch.recipe.image} />
         <p>Calories: {foundMatch.recipe.calories}</p>
         <ul>
-          {foundMatch.recipe.ingredients.map((ingredient) => (
+        Ingredients: {foundMatch.recipe.ingredients.map((ingredient) => (
             <li>{ingredient.text}</li>
           ))}
         </ul>
