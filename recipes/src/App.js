@@ -46,6 +46,8 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Route exact path="/">
+            <img className="logo-home" src="https://i.imgur.com/bSHIrgH.png" alt="" />
+            <img className="banner-home" src="https://i.imgur.com/UpDD9aR.jpg" alt="" />
             <h1 className="question-title">WHAT DO YOU WANNA EAT TODAY?</h1>
             <form onSubmit={getSearch} className="search-form">
               <input

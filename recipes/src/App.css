@@ -2,14 +2,15 @@
 
 .App {
   min-height: 100vh;
-  background-image: linear-gradient(to top, #ffe817 0%, #ffe817 100%);
+  /* background-image: linear-gradient(to top, #ffe817 0%, #ffe817 100%); */
 }
 
 .question-title {
   margin-top: 50px;
   text-align: center;
   font-family: "Oswald", sans-serif;
-  /* text-shadow: -2px 0px rgb(255, 11, 239); */
+  font-size: 50px;
+  text-shadow: -2px 0px rgb(241, 225, 0);
 }
 
 .search-form {
@@ -21,7 +22,7 @@
 
 .search-bar {
   width: 30%;
-  border: none;
+  border: 1px solid grey;
   padding: 10px;
   border-radius: 30px;
 }
@@ -64,4 +65,16 @@ h3 {
 
 li {
   list-style: none;
+}
+
+.logo-home {
+  width: 300px;
+  display:block;
+  margin:auto;
+  padding: 30px;
+}
+
+.banner-home {
+  display:block;
+  margin:auto;
 }
