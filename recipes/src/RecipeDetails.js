@@ -17,8 +17,8 @@ const RecipeDetails = (recipes, routeProps) => {
         <h3 className="title-recipe-details">{foundMatch.recipe.label}</h3>
         <p>Calories: {foundMatch.recipe.calories}</p>
         <ul>
-        Ingredients: {foundMatch.recipe.ingredients.map((ingredient) => (
-            <li>{ingredient.text}</li>
+          {foundMatch.recipe.ingredients.map((ingredient) => (
+          <li>{ingredient.text}</li>
           ))}
         </ul>
       </div>
