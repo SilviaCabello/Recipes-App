@@ -68,7 +68,7 @@ function App() {
                     key={recipe.recipe.index}
                     title={recipe.recipe.label}
                     image={recipe.recipe.image}
-                    
+                    dishType={recipe.recipe.dishType}
                     ingredients={recipe.recipe.ingredients}
                   />
                 </Link>
